@@ -1,106 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300&display=swap');
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>MOKEPON!</title>
+        <script src="./js/mokepon.js"></script>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <section id="seleccionar-mascota">
+            <h1 class="titulo">Mokepon</h1>
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #041562;
-	}
+            <h2 class="subtitulo">Elige tu mascota:</h2>
 
-#seleccionar-mascota {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+            <div class="tarjetas">
+                <label class="tarjeta-de-mokepon" for="hipodoge">
+                    <p>Hipodoge</p>
+                    <img src="./assets/mokepons_mokepon_hipodoge_attack.png" alt="Hipodoge">
+                </label>
+                <input type="radio" name="mascota" id="hipodoge" />
+                
+                <label class="tarjeta-de-mokepon" for="capipepo">
+                    <p>Capipepo</p>
+                    <img src="./assets/mokepons_mokepon_capipepo_attack.png" alt="Capipepo">
+                </label>
+                <input type="radio" name="mascota" id="capipepo" />
+                
+                <label class="tarjeta-de-mokepon" for="ratigueya">
+                    <p>Ratigueya</p>
+                    <img src="./assets/mokepons_mokepon_ratigueya_attack.png" alt="Ratigueya">
+                </label>
+                <input type="radio" name="mascota" id="ratigueya" />
+            </div>
 
-.titulo {
-  color: white;
-  font-size: 32px;
-  font-family: 'Fredoka One', cursive;
-}
+            <button id="boton-mascota">Seleccionar</button>
+        </section>
 
-.subtitulo {
-  color: white;
-  font-size: 20px;
-}
+        <section id="seleccionar-ataque">
+            <h1 class="titulo">Mokepon</h1>
 
-.tarjetas {
-  display: flex;
-  gap: 10px;
-}
+            <h2 class="subtitulo">Elige tu ataque:</h2>
 
-.tarjeta-de-mokepon {
-  width: 180px;
-  height: 100px;
-  background: #11468F;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
+            <div>
+                <button id="boton-fuego" class="boton-de-ataque">Fuego 🔥</button>
+                <button id="boton-agua" class="boton-de-ataque">Agua 💧</button>
+                <button id="boton-tierra" class="boton-de-ataque">Tierra 🌱</button>
+            </div>
 
-.tarjeta-de-mokepon img {
-  width: 80px;
-}
+            <div id="mensajes">
+                <p id="resultado">Mucha suerte</p>
 
-#boton-mascota {
-  width: 180px;
-  height: 40px;
-  border-radius: 20px;
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  margin-top: 30px;
-}
+                <section id="reiniciar">
+                    <button id="boton-reiniciar">Reiniciar</button>
+                </section>
+            </div>
 
-input {
-  display: none;
-}
-
-#seleccionar-ataque {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.boton-de-ataque {
-  background-color: #11468F;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 20px;
-  border-color: transparent;
-  width: 180px;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-}
-
-#mensajes {
-  width: 280px;
-  background: #EEEEEE;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-#boton-reiniciar {
-  border: none;
-  color: #11468F;
-  font-family: 'Poppins', sans-serif;
-}
-
-.ataques {
-  display: grid;
-  grid-template-columns: 100px 100px;
-  color: white;
-}
-
-#vidas-jugador, #vidas-enemigo {
-  font-size: 32px;
-  margin-bottom: 0;
-}
+            <div class="ataques">
+                <div>
+                    <p id="vidas-jugador">3</p>
+                    <p id="mascota-jugador"></p>
+                    <div id="ataques-del-jugador"></div>
+                </div>
+                <div>
+                    <p id="vidas-enemigo">3</p>
+                    <p id="mascota-enemigo"></p>
+                    <div id="ataques-del-enemigo"></div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
